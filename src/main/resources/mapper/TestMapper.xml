@@ -6,7 +6,33 @@
 
     <select id="selectTest" resultType="com.test.test.model.TestModel">
     SELECT *
-      FROM  test.test_teble
+      FROM  test.test_table
     </select>
 
+    <insert id="saveTest" parameterType="com.test.test.model.TestModel">
+    INSERT
+      INTO test.test_table
+    VALUES (
+            null,
+            #{testName},
+            #{testAddres},
+            #{testJob}
+            )
+    </insert>
+
+    <delete id="deleteTest">
+    DELETE FROM test.test_table
+     WHERE TEST_NUM = #{testNum}
+
+    </delete>
+
+    <update id="updateTest">
+    UPDATE test.test_table
+       SET  TEST_NAME = #{testName}
+           ,TEST_ADDRES = #{testAddres}
+           ,TEST_JOB = #{testJob}
+    WHERE  TEST_NUM = #{testNum}
+
+
+    </update>
 </mapper>

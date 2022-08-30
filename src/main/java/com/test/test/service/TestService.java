@@ -29,5 +29,19 @@ public class TestService {
         return testMapper.selectTest();
     }
 
+    public void save(TestModel model){
+
+       testMapper.saveTest(model);
+    }
+
+    public void delete(TestModel model){
+
+        testMapper.deleteTest(model);
+    }
+
+    public void update(TestModel model){
+
+        testMapper.updateTest(model);
+    }
 
 }

@@ -9,7 +9,18 @@ import java.util.Map;
 @Mapper
 public interface TestMapper {
 
+    /**
+     *  select
+     * @param
+     */
     List<TestModel> selectTest();
+    /**
+     * insert
+     * @param
+     */
+    void saveTest(TestModel model);
+    void deleteTest(TestModel model);
+    void updateTest(TestModel model);
 
 
 }

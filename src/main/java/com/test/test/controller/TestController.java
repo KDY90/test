@@ -31,12 +31,22 @@ public class TestController {
         Map<String, Object> resultMap = new HashMap<>();
         List<TestModel> list = testService.getTestList();
         resultMap.put("list", list);
-        System.out.println("testService.getTestList()"+testService.getTestList().toString());
-        System.out.println("list"+list.toString());
-        System.out.println("resultMap"+resultMap.toString());
         return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
+    @PostMapping("/save")
+    public void saveTest(TestModel model){
+        testService.save(model);
+    }
 
+    @PostMapping("/update")
+    public void updateTest(TestModel model){
+        testService.update(model);
+    }
+
+    @PostMapping("/delete")
+    public void deleteTest(TestModel model){
+        testService.delete(model);
+    }
 
     @GetMapping("/TestModel")
     public ArrayList<TestModel> memberTest2(){
